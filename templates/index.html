@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Чат</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/monokai.min.css">
+</head>
+<body>
+    <div class="container">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Переключить тему">
+            ☀️/🌙
+        </button>
+
+        <div class="chat-window">
+            <div class="message gpt-message initial-greeting">
+                <p>Здравствуйте. Чем могу помочь?</p>
+            </div>
+            <div class="messages-container" id="messages-container">
+                </div>
+        </div>
+
+        <form id="chat-form" class="input-area">
+            <input type="text" id="user-input" placeholder="Спросить..." required autocomplete="off">
+            <button type="submit" id="send-btn">Отправить</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
